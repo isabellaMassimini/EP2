@@ -134,28 +134,3 @@ def calcula_pontos_quadra(face_dado):
 
         i += 1
     return 0
-
-def calcula_pontos_quina(face_dado):
-    i = 0
-    while i < len(face_dado):
-        valor = face_dado[i]
-        cont = 0
-        j = 0
-        while j < len(face_dado):
-            if face_dado[j] == valor:
-                cont += 1
-            j += 1
-        if cont >= 5:
-            return 50
-        i += 1
-    return 0
-
-def calcula_pontos_regra_avancada (face_dado_5):
-    dic = {}
-    dic['cinco_iguais'] = calcula_pontos_quina(face_dado_5)
-    dic['full_house'] = calcula_pontos_full_house(face_dado_5)
-    dic['quadra'] = calcula_pontos_quadra(face_dado_5)
-    dic ['sem_combinacao'] = calcula_pontos_soma (face_dado_5)
-    dic ['sequencia_alta'] = calcula_pontos_sequencia_alta(face_dado_5)
-    dic ['sequencia_baixa'] = calcula_pontos_sequencia_baixa (face_dado_5)
-    return dic 
