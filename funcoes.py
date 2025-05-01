@@ -112,4 +112,4 @@ def calcula_pontos_full_house(face_dado):
     else: 
         return 0 
     
-print(calcula_pontos_full_house([5, 5, 5, 5, 2]))
+
