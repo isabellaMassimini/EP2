@@ -90,3 +90,26 @@ def calcula_pontos_sequencia_alta(face_dado):
             return 30
 
     return 0 
+
+def calcula_pontos_full_house(face_dado):
+    i = 0
+    lista1 = []
+    lista2 = []
+
+    while i < len(face_dado):
+        if len(lista1) == 0:
+            lista1.append(face_dado[i])
+        elif face_dado[i] == lista1[0]:
+            lista1.append(face_dado[i])
+        elif len(lista2) == 0:
+            lista2.append(face_dado[i])
+        elif face_dado[i] == lista2[0]:
+            lista2.append(face_dado[i])
+        i += 1
+
+    if (len(lista1) == 3 and len(lista2) == 2) or (len(lista1) == 2 and len(lista2) == 3):
+        return face_dado[0] + face_dado[1] + face_dado[2] + face_dado[3] + face_dado[4]
+    else: 
+        return 0 
+    
+print(calcula_pontos_full_house([5, 5, 5, 5, 2]))
