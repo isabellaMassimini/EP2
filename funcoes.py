@@ -134,3 +134,18 @@ def calcula_pontos_quadra(face_dado):
 
         i += 1
     return 0
+
+def calcula_pontos_quina(face_dado):
+    i = 0
+    while i < len(face_dado):
+        valor = face_dado[i]
+        cont = 0
+        j = 0
+        while j < len(face_dado):
+            if face_dado[j] == valor:
+                cont += 1
+            j += 1
+        if cont >= 5:
+            return 50
+        i += 1
+    return 0
